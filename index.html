@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grade Calculator</title>
+
+<style> 
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Chalkduster', cursive;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #5D4037;
+}
+
+.page-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: linear-gradient(135deg, #fff9e8 0%, #fff0c7 100%);
+    width: 90%;
+    max-width: 600px;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(100, 70, 50, 0.15);
+    border: 3px solid #FFCC80;
+}
+
+.header h1 {
+    text-align: center;
+    margin: 0;
+    color: #5D4037;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #5D4037;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.grade-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.grade-col {
+    flex: 1 1 calc(33.33% - 7px); 
+    min-width: 100px;
+}
+
+.grade-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #FFCC80;
+    transition: 0.25s ease;
+    font-size: 14px;
+}
+
+.input:focus {
+    border-color: #FF9800;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #FFECB3;
+    margin: 18px 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 48%;
+    padding: 10px;
+    background: #FF9800;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #5D4037;
+}
+
+.btn:hover {
+    background: #FB8C00;
+}
+
+.btn.secondary {
+    background: #FF9800;
+    color: #5D4037;
+}
+
+.btn.secondary:hover {
+    background: #FFECB3;
+}
+
+img{
+    text-align: center;
+    margin: auto;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 12px;
+    color: #5D4037;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+    <div class="page-wrap">
+
+        <div class="container">
+            <header class="header">
+                <h1>Student Grade Calculator</h1>
+                <p class="subtitle">Enter student info and grades ; click Calculate</p>
+            </header>
+
+            <img src="pomu.png" style="text-align: center; height: 190px; width: 200px;">
+            <img src="pomu.png" style="text-align: center; height: 190px; width: 2o0px;">
+            <img src="pomu.png" style="text-align: center; height: 190px; width: 2o0px;">
+
+            <main class="main">
+                <div class="row">
+                    <label for="first" class="label">First Name</label>
+                    <input id="first" class="input" type="text" placeholder="e.g. Luisito">
+                </div>
+
+                <div class="row">
+                    <label for="last" class="label">Last Name</label>
+                    <input id="last" class="input" type="text" placeholder="e.g. Balajadia">
+                </div>
+
+                <hr>
+
+                <div class="grade-row">
+                    <div class="grade-col">
+                        <div class="grade-input-wrapper">
+                            <label for="science" class="label">Science</label>
+                            <input id="science" class="input" type="number" min="0" max="100">
+                        </div>
+                    </div>
+                    <div class="grade-col">
+                        <div class="grade-input-wrapper">
+                            <label for="math" class="label">Math</label>
+                            <input id="math" class="input" type="number" min="0" max="100">
+                        </div>
+                    </div>
+                    <div class="grade-col">
+                        <div class="grade-input-wrapper">
+                            <label for="english" class="label">English</label>
+                            <input id="english" class="input" type="number" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grade-row">
+                    <div class="grade-col">
+                        <div class="grade-input-wrapper">
+                            <label for="filipino" class="label">Filipino</label>
+                            <input id="filipino" class="input" type="number" min="0" max="100">
+                        </div>
+                    </div>
+                    <div class="grade-col">
+                        <div class="grade-input-wrapper">
+                            <label for="ict" class="label">ICT</label>
+                            <input id="ict" class="input" type="number" min="0" max="100">
+                        </div>
+                    </div>
+                    <div class="grade-col">
+                        <div class="grade-input-wrapper">
+                            <label for="pe" class="label">PE</label>
+                            <input id="pe" class="input" type="number" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="calculateButton" class="btn">Calculate GWA</button>
+                    <button id="resetButton" class="btn secondary">Clear</button>
+                </div>
+
+                <div id="finalGradeOutput" class="result-box">Enter grades above to calculate GWA.</div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    function computeAverage() {
+        const first = document.getElementById("first").value.trim() || "Student";
+        const last = document.getElementById("last").value.trim();
+        const fullName = last ? `${first} ${last}` : first;
+        
+        const sci = parseFloat(document.getElementById("science").value);
+        const math = parseFloat(document.getElementById("math").value);
+        const eng = parseFloat(document.getElementById("english").value);
+        const fil = parseFloat(document.getElementById("filipino").value);
+        const ict = parseFloat(document.getElementById("ict").value);
+        const pe  = parseFloat(document.getElementById("pe").value);
+
+        const allGrades = [sci, math, eng, fil, ict, pe];
+
+        if (allGrades.some(isNaN) || allGrades.length !== 6) {
+            document.getElementById("finalGradeOutput").innerText = "Please enter all 6 valid grades (0-100)!";
+            return;
+        }
+
+        if (allGrades.some(grade => grade < 0 || grade > 100)) {
+            document.getElementById("finalGradeOutput").innerText = "Grades must be between 0 and 100.";
+            return;
+        }
+
+        const sumOfGrades = allGrades.reduce((sum, current) => sum + current, 0);
+        const gwa = (sumOfGrades / allGrades.length).toFixed(2);
+        
+        let message = `${fullName}, your GWA is: ${gwa}`;
+        
+        if (gwa >= 90) {
+            message += " ~ Excellent work! ~";
+        } else if (gwa >= 85) {
+            message += " ~ Great job! ~";
+        } else if (gwa >= 80) {
+            message += " ~ Good effort! ~";
+        } else {
+            message += " ~ Let's study harder! ~";
+        }
+
+        document.getElementById("finalGradeOutput").innerText = message;
+    }
+
+    function resetForm() {
+        document.querySelectorAll("input").forEach(i => i.value = "");
+        document.getElementById("finalGradeOutput").innerText = "Enter grades above to calculate GWA.";
+    }
+
+    document.getElementById("calculateButton").onclick = computeAverage;
+    document.getElementById("resetButton").onclick = resetForm;
+    
+    document.body.style.fontFamily = 'Comic Sans MS', 'Chalkboard SE', 'Chalkduster', cursive;
+
+    document.getElementById("finalGradeOutput").innerText = "Enter grades above to calculate GWA.";
+    </script>
+
+</body>
+</html>
